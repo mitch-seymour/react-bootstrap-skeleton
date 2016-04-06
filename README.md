@@ -29,7 +29,7 @@ $ npm start
 ___
 
 ### Creating Components
-Now, you can easily create custom components for your project, or use the built-in [React Bootstrap](https://react-bootstrap.github.io/) components. Custom components should live in the `/assets/components` directory. Here is an example of a custom component called `Menu`.
+Now, you can easily create custom components for your project, or use the built-in [React Bootstrap](https://react-bootstrap.github.io/) components. The jsx for custom components should live in the `/assets/js/components` directory. Here is an example of a custom component called `Menu`.
 
 ```javascript
 /* assets/components/menu.jsx */
