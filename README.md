@@ -17,7 +17,7 @@ ___
 ### Run
 
 ```bash
-$ grunt # will watch for updates to the js, jsx, and css files in /assets
+$ gulp # will watch for updates to the js, jsx, and css [to do] files in /assets
 ```
 
 Then, open another tab in your shell,  and run the web server:
@@ -73,9 +73,9 @@ Now, to use this component, simply mount it in `/assets/app.jsx`.
 
 ```
 
-Now, if you have grunt running per the instructions listed in the **Run** section above, you will see the `browserify:bundle` task get executed, which essentially means your `jsx` code will be converted into javascript and placed in the `public/js/app.bundle.js` file. Now, if you visit [http://localhost:9000](http://localhost:9000), you will see your custom component rendered on the page.
+Now, if you have gulp running per the instructions listed in the **Run** section above, the `jsx` code will be converted into javascript and placed in the `public/js/app.bundle.min.js` file. Now, if you visit [http://localhost:3000](http://localhost:3000), you will see your custom component rendered on the page.
 
-That's pretty much it. In less than 5 minutes, you were able to get a React application going, and should be able to easily build bootstrap themes.
+That's pretty much it. In less than 5 minutes, you were able to get a React application running, and should be able to build from here.
 
 ___
 
