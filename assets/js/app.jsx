@@ -14,7 +14,7 @@
     );
     
     ReactDOM.render(
-      <Menu />,
+      alertInstance,
       document.querySelector('#app')
     );
     

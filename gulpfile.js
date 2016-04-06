@@ -10,12 +10,14 @@ var
     gutil = require('gulp-util'),
     jshint = require('gulp-jshint'),
     rename = require('gulp-rename'),
+    sass = require('gulp-sass'),
     source = require('vinyl-source-stream'),
     sourcemaps = require('gulp-sourcemaps'),
     uglify = require('gulp-uglify'),
     paths = {};
 
 paths.scripts = ['assets/js/**/*.js', 'assets/js/**/*.jsx']
+paths.styles  = ['assets/css/**/*.css', 'assets/css/**/*.scss']
 
 gulp.task('serve', ['scripts'], function(){
     
@@ -25,10 +27,25 @@ gulp.task('serve', ['scripts'], function(){
     });
     */
     
+    gulp.watch(paths.styles, ['styles']);
     gulp.watch(paths.scripts, ['scripts']);
     
 });
 
+
+// css/sass tasks
+gulp.task('styles', function () {
+    
+    return gulp.src('assets/**/*.scss')
+        .pipe(sourcemaps.init())
+            .pipe(sass().on('error', sass.logError))
+            .pipe(rename('app.bundle.min.css'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('public/css'));
+    
+});
+
+// javascript/jsx tasks
 gulp.task('scripts', function () {
     
     var b = browserify({
@@ -43,9 +60,6 @@ gulp.task('scripts', function () {
         .pipe(buffer())
         .pipe(sourcemaps.init())
           // Add transformation tasks to the pipeline here.
-          .pipe(babel({
-              presets: ['es2015', 'react']
-          }))
           //.pipe(jshint())
           //.pipe(jshint.reporter('jshint-stylish'))
           .pipe(gulp.dest('public/js'))
