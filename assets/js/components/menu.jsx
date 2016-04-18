@@ -6,7 +6,11 @@ Menu = React.createClass({
   render: function() {
     return (
       <div className="menu">
-        Hello, world! I am a custom menu.
+        <ul>
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
       </div>
     );
   }

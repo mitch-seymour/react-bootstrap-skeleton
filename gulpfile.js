@@ -4,7 +4,6 @@ var
     gulp = require('gulp'),
     babel = require('gulp-babel'),
     browserify = require('browserify'),
-    browserSync = require('browser-sync').create(),
     buffer = require('vinyl-buffer'),
     concat = require('gulp-concat'),
     gutil = require('gulp-util'),
@@ -20,12 +19,6 @@ paths.scripts = ['assets/js/**/*.js', 'assets/js/**/*.jsx']
 paths.styles  = ['assets/css/**/*.css', 'assets/css/**/*.scss']
 
 gulp.task('serve', ['scripts'], function(){
-    
-    /*
-    browserSync.init(null, {
-        proxy: "localhost:3000"
-    });
-    */
     
     gulp.watch(paths.styles, ['styles']);
     gulp.watch(paths.scripts, ['scripts']);
